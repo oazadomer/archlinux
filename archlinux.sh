@@ -56,6 +56,11 @@ echo "2. for GNOME"
 echo "3. for KDE"
 echo "4. for No Desktop"
 read DESKTOP
+echo "Do You Want To Install Office: "
+echo "1. for WPS-Office"
+echo "2. for OnlyOffice"
+echo "3. for I Don't want To Install"
+read OFFICE
 echo "Do You Want To Install Virtualbox: "
 echo "1. for Yes"
 echo "2. for No"
@@ -185,6 +190,17 @@ then
     sed -i "s/Current=/Current=breeze/" /usr/lib/sddm/sddm.conf.d/default.conf
 else
     echo "Desktop Will Not Be Installed"
+fi
+
+#OFFICE INSTALLATION
+if [[ $OFFICE == "1" ]]
+then
+    pacman -S wps-office --noconfirm --needed
+elif [[ $OFFICE == "2" ]]
+then
+    pacman -S onlyoffice-bin --noconfirm --needed
+else
+    "Office Will Not Be Installed"
 fi
 
 #VIRTUALBOX INSTALLATION
