@@ -164,7 +164,7 @@ echo "================================================================="
 echo "==         Display, Audio, Printer, Bluetooth Drivers          =="
 echo "================================================================="
 
-pacman -S xorg-server xorg-xkill xf86-video-amdgpu nvidia-lts nvidia-prime nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia libxnvctrl libxcrypt-compat xf86-input-libinput libinput touchegg xdg-user-dirs bash-completion bluez bluez-utils cups pipewire pipewire-audio pipewire-alsa pipewire-jack pipewire-pulse libpipewire --noconfirm --needed
+pacman -S xorg-server xorg-xkill xf86-video-amdgpu nvidia-lts nvidia-prime nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia libxnvctrl libxcrypt-compat xf86-input-libinput libinput touchegg xdg-user-dirs bash-completion bluez bluez-utils cups pipewire pipewire-audio pipewire-alsa pipewire-jack pipewire-pulse libpipewire downgrade --noconfirm --needed
 
 systemctl enable NetworkManager
 systemctl enable bluetooth
