@@ -67,7 +67,7 @@ echo "2. for No"
 read VIRTUALBOX
 echo "="
 echo "================================================================="
-echo "==                   Formating And Mounting                    =="
+echo "==                      Format And Mount                       =="
 echo "================================================================="
 
 mkfs.vfat -F32 -n "EFISYSTEM" "${EFI}"
@@ -114,7 +114,7 @@ echo "$USERNAME:$USERNAMEPASSWORD" | chpasswd
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 echo "================================================================="
-echo "==             Setup Language to US and set locale             =="
+echo "==                 Setup Language and Set Locale               =="
 echo "================================================================="
 
 sed -i "s/^#$LOCALE/$LOCALE/" /etc/locale.gen
@@ -158,10 +158,10 @@ echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist\n" >> /etc/
 
 pacman -Sy pamac-aur brave-bin --noconfirm --needed
 sed -i "s/^#EnableAUR/EnableAUR/" /etc/pamac.conf
-pamac update all
+pamac update all --no-confirm --needed
 
 echo "================================================================="
-echo "==         Display, Audio, Printer, Bluetooth Drivers          =="
+echo "==    Installing Display, Audio, Printer, Bluetooth Drivers    =="
 echo "================================================================="
 
 pacman -S xorg-server xorg-xkill xf86-video-amdgpu nvidia-lts nvidia-prime nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia libxnvctrl libxcrypt-compat xf86-input-libinput libinput touchegg xdg-user-dirs bash-completion bluez bluez-utils cups pipewire pipewire-audio pipewire-alsa pipewire-jack pipewire-pulse libpipewire downgrade --noconfirm --needed
@@ -219,7 +219,7 @@ REALEND
 
 arch-chroot /mnt sh next.sh
 
-# #Rebooting The System
+#Rebooting The System
 echo "================================================================="
 echo "==       Installation Complete. Rebooting in 10 Seconds...     =="
 echo "================================================================="
