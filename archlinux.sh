@@ -185,7 +185,7 @@ then
     systemctl enable gdm
 elif [[ $DESKTOP == "3" ]]
 then
-    pacman -S plasma-desktop dolphin dolphin-plugins ark konsole fish okular gwenview plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil bluedevil kscreen kinfocenter sddm sddm-kcm kcalc kate ksysguard exfatprogs f2fs-tools traceroute cronie ufw spectacle ktorrent merkuro mailspring skanlite kdenlive mediainfo gimp xournalpp openvpn networkmanager-openvpn noto-fonts noto-fonts-emoji audacity vlc mplayer obs-studio partitionmanager ttf-dejavu ttf-hanazono gvfs-afc gvfs-goa gvfs-google gvfs-mtp gvfs-gphoto2 gvfs-nfs nfs-utils ntfs-3g unrar unzip lzop gdb mtpfs ffmpegthumbs ffmpeg openh264 nodejs npm python-pip pyenv postgresql mariadb android-tools vala steam --noconfirm --needed
+    pacman -S plasma-desktop dolphin dolphin-plugins ark konsole fish okular gwenview plasma-nm plasma-pa kdeplasma-addons kde-gtk-config powerdevil bluedevil kscreen kinfocenter sddm sddm-kcm kalk kate ksysguard exfatprogs f2fs-tools traceroute cronie ufw spectacle ktorrent merkuro mailspring skanlite kdenlive mediainfo gimp xournalpp openvpn networkmanager-openvpn noto-fonts noto-fonts-emoji audacity vlc mplayer obs-studio partitionmanager ttf-dejavu ttf-hanazono gvfs-afc gvfs-goa gvfs-google gvfs-mtp gvfs-gphoto2 gvfs-nfs nfs-utils ntfs-3g unrar unzip lzop gdb mtpfs ffmpegthumbs ffmpeg openh264 nodejs npm python-pip pyenv postgresql mariadb android-tools vala steam --noconfirm --needed
     systemctl enable sddm
     sed -i "s/Current=/Current=breeze/" /usr/lib/sddm/sddm.conf.d/default.conf
 else
